@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+    /* primary */
+--blue: hsl(246, 80%, 60%);
+/* (work) */
+--light-red-work : hsl(15, 100%, 70%);
+/* (play) */
+--soft-blue : hsl(195, 74%, 62%);
+/* (study) */
+--light-red-study : hsl(348, 100%, 68%);
+/* (exercise) */
+--lime-green : hsl(145, 58%, 55%);
+/* (social) */
+--violet : hsl(264, 64%, 52%);
+/* (self care) */
+--soft-orange : hsl(43, 84%, 65%);
+
+/* ### Neutral */
+
+--very-dark-blue: hsl(228, 39%, 15%);
+--dark-blue: hsl(237, 44%, 25%);
+--desaturated-blue: hsl(235, 67%, 54%);
+--pale-blue: hsl(236, 100%, 87%);
+
+/* text */
+
+--white : rgb(229, 229, 229);
+--grey: rgb(184, 184, 184);
+}
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 18;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+    background-color: var(--very-dark-blue);
+}
+
+/* grid for all cards set-up */
+.hours-management-cards {
+    
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 12px 12px; 
+    grid-template-areas: 
+    "main . . ."
+    "main . . .";     
+}
+.main-card  {
+    grid-area: main;
+}
+
+/* end */
+.hours-management-cards {
+    margin: 10rem auto;
+    max-width: 700px;
+    height: 320px;
+}
+.three-dots-button:hover {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(216%) hue-rotate(279deg) brightness(113%) contrast(80%);
+}
+.three-dots-button {
+    background: no-repeat url(../images/icon-ellipsis.svg);
+    width: 1.5rem;
+    height: .5rem;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 1.3rem;
+    right: 1rem;
+}
+
+.title-and-button-card {
+    padding: 1rem 1rem;
+    padding-bottom: 0;
+    font-size: .7rem;
+    z-index: inherit;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hours-style {
+    font-size: 2rem;
+    font-weight: 300;
+    padding: 0 1rem;
+    padding-top: 1.2rem;
+    padding-bottom: 0;
+}
+
+.last-week-hours-style {
+    padding: 1rem 1rem;
+    padding: 0 1rem 1rem 1rem;
+    font-size: .7rem;
+    color: var(--grey); 
+}
+
+.data-wrapper {
+    color: var(--white);
+    height: fit-content;
+    background-color: var(--dark-blue);
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    border-radius: .7rem;
+}
+
+.div-card-work, 
+.div-card-play, 
+.div-card-study, 
+.div-card-exercise,  
+.div-card-social, 
+.div-card-self-care {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    border-radius: .7rem;
+}
+
+.jeremy-card-info { 
+    background-color: var(--desaturated-blue);
+    border-radius: .7rem;
+    height: fit-content;
+}
+
+.report-for {
+    color: var(--grey);
+    padding: 0 1rem;
+    font-size: .7rem;
+}
+.jeremy-robson {
+    color: var(--white);
+    padding: 0 1rem;
+    font-weight: 300;
+    font-size: 1.8rem;
+    padding-bottom: 1.4rem;
+}
+
+.img-jeremy {
+    padding: 1rem;
+}
+#jeremy-img {
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    width: 4rem;
+}
+
+
+.navigation-btns > button:hover {
+    color: var(--white);
+}
+.daily-btn, .weekly-btn, .monthly-btn {
+    color: var(--grey);
+}
+.navigation-btns > button {
+    margin: .5rem;
+    text-align: left;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+}
+.navigation-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 1rem;
+    padding-top: .4rem;
+}
+.main-card {
+    background-color: var(--dark-blue);
+    border-radius: .7rem;
+}
+.div-card-work {
+    background-color: var(--light-red-work);
+}
+.div-card-play { 
+    background-color: var(--soft-blue);
+} 
+
+.div-card-study {
+    background-color: var(--light-red-study);
+} 
+
+.div-card-exercise {
+    background-color: var(--lime-green);
+}  
+
+.div-card-social { 
+    background-color: var(--violet);
+}
+
+.div-card-self-care {
+    background-color: var(--soft-orange);
+}
+
+.card-logo {
+    position: absolute;
+    right: 0;
+    width: 3rem;
+    z-index: -1;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+.white-nav-btns {
+    color: var(--white);
+}
+
+@media (max-width: 420px) {
+    body {
+        overflow-y: visible;
+        background-color: var(--very-dark-blue);
+    }
+    .hours-management-cards {
+        margin: 5rem auto;
+        max-width: 800px;
+        padding: 0 1rem;
+        height: fit-content;
+    }
+    .hours-management-cards {
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+        gap: 12px 0px; 
+        grid-template-areas: 
+          "main"
+          "main"
+          "."
+          "."
+          "."
+          "."
+          "."
+          "."; 
+      }
+      .main-card { grid-area: main; }
+      .div-hours-and-last-week {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+      .hours-style {
+          padding: 1rem;
+          padding-left: 1.5rem;
+          font-size: 2rem;
+          padding-top: 0 ;
+      }
+      .title-card {
+          font-size: 1rem;
+          padding-bottom: .5rem;
+      }
+      .last-week-hours-style {
+          padding: .5rem 1.5rem 1rem 0 ;
+          margin: 0;
+      }
+      .title-and-button-card {
+          padding: 1rem 1.5rem 0 1.5rem;
+      }
+      .three-dots-button {
+        top: 1.5rem;
+      }
+      .navigation-btns {
+          flex-direction: row;
+          margin-bottom: 0;
+          padding-bottom: .4rem;
+          justify-content: space-between;
+      }
+      .jeremy-card-info {
+          display: flex;
+          flex-direction: row;
+          padding: 1rem;
+          align-items: center;
+      }
+      .info {
+          align-items: center;
+      }
+      .report-for {
+          padding-left: 0rem;
+      }
+      .jeremy-robson {
+          padding: 0;
+          padding-top: 0rem;
+          margin: 0;
+          width: 100%;
+          font-size: 1.7rem;
+      }
+      .div-card-work, 
+        .div-card-play, 
+.div-card-study, 
+.div-card-exercise,  
+.div-card-social, 
+.div-card-self-care {
+    height: 135px;
+}   
+.main-card {
+    margin-top: 5.8rem;
+    height: fit-content;
+}
+.hours-management-cards {
+    padding-top: 0;
+    margin-top: 0;
+}
+      
+}
