@@ -34,18 +34,22 @@ async function getDataFetch(click) {
                 let replacedTitle = title.replace(" ", "-").toLowerCase();
                 let elementToImplenet = document.querySelector('.hours-' + replacedTitle);
                 let elementToImplenetLastWeek = document.querySelector('.last-week-' + replacedTitle);
-                console.log(clickDiv == 'daily')
+                let lastVariable = document.querySelectorAll('.last-whatever');
+                // console.log(clickDiv == 'daily')
                 if (clickDiv == 'daily') {
                     elementToImplenetLastWeek.innerHTML = response[i].timeframes.daily.previous;
                     elementToImplenet.innerHTML = response[i].timeframes.daily.current;
+                    lastVariable.forEach(element => element.innerHTML = "Yesterday")
                 }
                 if (clickDiv == 'weekly') {
                     elementToImplenetLastWeek.innerHTML = response[i].timeframes.weekly.previous;
                     elementToImplenet.innerHTML = response[i].timeframes.weekly.current;
+                    lastVariable.forEach(element => element.innerHTML = "Last week")
                 }
                 if (clickDiv == 'monthly') {
                     elementToImplenetLastWeek.innerHTML = response[i].timeframes.monthly.previous;
                     elementToImplenet.innerHTML = response[i].timeframes.monthly.current;
+                    lastVariable.forEach(element => element.innerHTML = "Last month")
                 }
             }   
         }
